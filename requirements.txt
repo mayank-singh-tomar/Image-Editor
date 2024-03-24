@@ -1,6 +1,6 @@
 flask 
 opencv-python
-base64-python
 numpy
+base64
 
 gunicorn
