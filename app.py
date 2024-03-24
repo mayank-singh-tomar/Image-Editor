@@ -41,8 +41,8 @@ def edit():
     if 'add_text' in request.form:
         text = request.form['text_input']
         draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype('arial.ttf', 36)
-        draw.text((10, 10), text, font=font, fill=(255, 0, 0))
+        font_size = 36  # Change this value to increase or decrease the font size
+        draw.text((10, 10), text, fill=(255, 0, 0), font=ImageFont.truetype('arial.ttf', font_size))
 
     # Convert edited image to base64
     buffered = BytesIO()
