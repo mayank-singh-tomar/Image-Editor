@@ -3,6 +3,9 @@ from flask import Flask, render_template, request, send_file
 from PIL import Image, ImageFilter, ImageEnhance, ImageDraw, ImageFont
 import base64
 from io import BytesIO
+from urllib.parse import quote
+from werkzeug.urls import url_quote
+
 
 app = Flask(__name__)
 
