@@ -81,11 +81,7 @@
             <input type="number" id="rotate-input" placeholder="Angle">
             <button onclick="rotateImage()">Rotate</button>
         </div>
-        <div class="editing-option">
-            <label>Blur:</label>
-            <input type="number" id="blur-input" placeholder="Kernel Size">
-            <button onclick="blurImage()">Blur</button>
-        </div>
+      
         <div class="editing-option">
             <label>Text:</label>
             <input type="text" id="text-input" placeholder="Enter text">
