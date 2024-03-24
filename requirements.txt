@@ -1,5 +1,4 @@
-flask 
-opencv-python
-numpy==1.26.3
+Flask==2.0.1
+Pillow==8.4.0
 
 gunicorn
