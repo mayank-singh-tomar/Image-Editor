@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request,jsonify
-pip install numpy opencv-python Flask
 import cv2
 import base64
 import numpy as np
