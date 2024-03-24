@@ -1,0 +1,6 @@
+flask 
+cv2
+base64
+numpy
+
+gunicorn
