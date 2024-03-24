@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Editor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('static/img_train.jpg');
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .image-container img {
+        max-width: 400px;
+        max-height: 400px;
+        border-radius: 5px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="number"] {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 style="color: chocolate;">Welcome to Image-Editor</h2>
+      <form method="post" enctype="multipart/form-data" action="{{ url_for('edit') }}">
+        <div class="form-group">
+          <label for="image">Upload Image:</label>
+          <input type="file" id="image" name="image" required>
+        </div>
+        <div class="form-group">
+          <label>Editing Operations:</label>
+          <div>
+            <label>
+              <input type="checkbox" name="rotate" value="rotate"> Rotate
+              <input type="number" name="rotate_angle" min="0" max="360" placeholder="Angle" disabled>
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" name="blur" value="blur"> Blur
+              <input type="number" name="blur_radius" min="0" max="10" step="0.1" placeholder="Radius" disabled>
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" name="contrast" value="contrast"> Contrast
+              <input type="number" name="contrast_factor" min="0" max="10" step="0.1" placeholder="Factor" disabled>
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" name="crop" value="crop"> Crop
+              <input type="text" name="crop_coordinates" placeholder="e.g., 100, 200, 300, 200" disabled>
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" name="grayscale" value="grayscale"> Grayscale
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" name="add_text" value="add_text"> Add Text
+              <input type="text" name="text_input" placeholder="Enter text" disabled>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn">Edit Image</button>
+      </form>
+    </div>
+    <script>
+      const inputs = document.querySelectorAll('input[type="number"], input[type="text"]');
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const numberInputs = checkbox.parentElement.querySelectorAll('input[type="number"], input[type="text"]');
+          numberInputs.forEach(input => input.disabled = !checkbox.checked);
+        });
+      });
+    </script>
+  </body>
+</html>
