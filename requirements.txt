@@ -1,5 +1,5 @@
 flask 
-opencv
+opencv-python>=<min_version>,<=<max_version>
 base64
 numpy
 
