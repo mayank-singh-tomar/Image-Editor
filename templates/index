@@ -82,11 +82,6 @@
             <button onclick="rotateImage()">Rotate</button>
         </div>
         <div class="editing-option">
-            <label>Blur:</label>
-            <input type="number" id="blur-input" placeholder="Kernel Size">
-            <button onclick="blurImage()">Blur</button>
-        </div>
-        <div class="editing-option">
             <label>Text:</label>
             <input type="text" id="text-input" placeholder="Enter text">
             <button onclick="addText()">Add Text</button>
@@ -203,18 +198,6 @@
             downloadLink.href = canvas.toDataURL('image/jpeg');
         }
 
-        function blurImage() {
-    const blurAmount = parseInt(document.getElementById('blur-input').value);
-    const tempCanvas = document.createElement('canvas');
-    const tempCtx = tempCanvas.getContext('2d');
-    tempCanvas.width = canvas.width;
-    tempCanvas.height = canvas.height;
-    tempCtx.drawImage(canvas, 0, 0);
-    StackBlur.canvasRGB(tempCanvas, 0, 0, tempCanvas.width, tempCanvas.height, blurAmount);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(tempCanvas, 0, 0);
-    updateDownloadLink();
-}
 
 
         function addText() {
