@@ -27,8 +27,7 @@ def edit():
         rows, cols = image.shape[:2]
         M = cv2.getRotationMatrix2D((cols / 2, rows / 2), angle, 1)
         image = cv2.warpAffine(image, M, (cols, rows))
-    elif operation == 'blur':
-        image = cv2.GaussianBlur(image, (5, 5), 0)
+        
     elif operation == 'text':
         text = request.form['text_data']
         font = cv2.FONT_HERSHEY_SIMPLEX
