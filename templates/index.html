@@ -6,21 +6,46 @@
       body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         margin: 0;
+        padding: 0;
         background-image: url('static/img_train.jpg');
       }
 
       .container {
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         max-width: 800px;
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .container h1 {
+        color: chocolate;
+        margin-bottom: 20px;
+      }
+
+      .logo {
+        float: left;
+        margin-right: 20px;
+      }
+
+      .upload-image {
+        margin-top: 20px;
+      }
+      .upload-image label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .upload-image input[type="file"] {
         width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
       }
 
       .image-container {
@@ -66,55 +91,90 @@
       .btn:hover {
         background-color: #0056b3;
       }
+
+      .filters1 {background-color: rgba(255, 204, 153, 0.8); /* Light orange */
+        padding: 40px;
+        border-radius: 80px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 250px;
+        width: 20%;
+        margin: 20px auto;
+      margin-left: 0%;}
+
+      .filters2 {background-color: rgba(255, 204, 153, 0.8); /* Light orange */
+        padding: 40px;
+        border-radius: 80px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 250px;
+        width: 20%;
+        margin: 20px auto;
+      margin-right: 0%;}
+        
+
+        .edit_btn {background-color: rgba(21, 8, 38, 0.8); /* Light orange */
+        padding: 10px;
+        border-radius: 80px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 100px;
+        width: 20%;
+        margin: 20px auto;}
+
+       
     </style>
   </head>
   <body>
     <div class="container">
-      <h2 style="color: chocolate;">Welcome to Image-Editor</h2>
+      <h1>
+        <img src="static/image_logo.png" alt="Logo" class="logo" height="150px" width="150">
+        Welcome to Image-Editor
+      </h1>
       <form method="post" enctype="multipart/form-data" action="{{ url_for('edit') }}">
         <div class="form-group">
           <label for="image">Upload Image:</label>
           <input type="file" id="image" name="image" required>
         </div>
-        <div class="form-group">
-          <label>Editing Operations:</label>
-          <div>
-            <label>
-              <input type="checkbox" name="rotate" value="rotate"> Rotate
-              <input type="number" name="rotate_angle" min="0" max="360" placeholder="Angle" disabled>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" name="blur" value="blur"> Blur
-              <input type="number" name="blur_radius" min="0" max="10" step="0.1" placeholder="Radius" disabled>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" name="contrast" value="contrast"> Contrast
-              <input type="number" name="contrast_factor" min="0" max="10" step="0.1" placeholder="Factor" disabled>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" name="crop" value="crop"> Crop
-              <input type="text" name="crop_coordinates" placeholder="e.g., 100, 200, 300, 200" disabled>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" name="grayscale" value="grayscale"> Grayscale
-            </label>
-          </div>
-          <div>
+        <div class="form-group"></div>
+    </div>
+    <div style="background-color: blur;">
+      <div class="filters1">
+        <label>
+          <input type="checkbox" name="rotate" value="rotate"> Rotate
+          <input type="number" name="rotate_angle" min="0" max="360" placeholder="Angle" disabled>
+        </label>
+      </div>
+      <div class="filters1">
+        <label>
+          <input type="checkbox" name="blur" value="blur"> Blur
+          <input type="number" name="blur_radius" min="0" max="10" step="0.1" placeholder="Radius" disabled>
+        </label>
+      </div>
+      <div class="filters1">
+        <label >
+          <input type="checkbox" name="contrast" value="contrast"> Contrast
+          <input type="number" name="contrast_factor" min="0" max="10" step="0.1" placeholder="Factor" disabled>
+        </label>
+      </div>
+      <div class="filters2">
+        <label>
+          <input type="checkbox" name="crop" value="crop"> Crop
+          <input type="text" name="crop_coordinates" placeholder="e.g., 100, 200, 300, 200" disabled>
+        </label>
+      </div>
+      <div class="filters2">
+        <label>
+          <input type="checkbox" name="grayscale" value="grayscale"> Grayscale
+        </label>
+      </div>
+      <div class="filters2">
             <label>
               <input type="checkbox" name="add_text" value="add_text"> Add Text
               <input type="text" name="text_input" placeholder="Enter text" disabled>
             </label>
           </div>
         </div>
+        <div class="edit_btn">
         <button type="submit" class="btn">Edit Image</button>
+      </div>
       </form>
     </div>
     <script>
