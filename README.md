@@ -1,8 +1,8 @@
-# Image Analyzer
+# Image Editor
 Live Website: https://image-editor-t7gm.onrender.com/
 
 # 📸 About the Project
-Image Analyzer is a simple and powerful web application that allows users to upload and edit images easily.
+Image Editor is a simple and powerful web application that allows users to upload and edit images easily.
 Using this app, you can perform basic image editing operations directly in your browser without needing any external software.
 
 Built with Flask and Pillow (Python Imaging Library), it provides a smooth and user-friendly experience for quick image processing.
@@ -32,7 +32,7 @@ Frontend: HTML, CSS, JavaScript
 Hosting: Render.com
 
 # 🚀 How to Use
-Visit the website: Image Analyzer
+Visit the website: Image Editor
 
 Upload an image from your device.
 
