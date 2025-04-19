@@ -1,28 +1,56 @@
-**Welcome to our Simple Image Editor!
-**
-What is this?
-This is an easy-to-use tool for editing your images. Whether you want to enhance your photos or add fun effects, this editor has got you covered!
+# Image Analyzer
+Live Website: https://image-editor-t7gm.onrender.com/
 
-How does it work?
-Our image editor provides simple tools for cropping, blur, grayscale, adding text, and more. You don't need to be a professional to use it!
+# 📸 About the Project
+Image Analyzer is a simple and powerful web application that allows users to upload and edit images easily.
+Using this app, you can perform basic image editing operations directly in your browser without needing any external software.
 
-How to use it?
-Upload your image.
-Preview your changes in real-time.
-Once you're satisfied, save your edited image to your device.
+Built with Flask and Pillow (Python Imaging Library), it provides a smooth and user-friendly experience for quick image processing.
 
-Features:
-Crop: Trim the edges of your image.
-Blur: Make your image blur.
-Filters: Add cool effects like black and white or sepia.
-Adjust: Change brightness, contrast.
-Text: Overlay text onto your image.
+# 🎨 Features
+Rotate images
 
-Why should you use our editor?
-Our editor is designed to be user-friendly and intuitive. You don't need any technical skills to make your images look great!
+Blur images
 
-Have feedback or questions?
-We're here to help! If you have any suggestions for improvements or if you encounter any issues, please let us know.
+Adjust Contrast
 
-Start editing now!
-Thank you for choosing our image editor. We hope you enjoy using it to enhance your photos!
+Convert to Grayscale
+
+Crop images
+
+Add Text to images
+
+Download the edited image
+
+# ⚙️ Tech Stack
+Backend: Python (Flask)
+
+Image Processing: Pillow (PIL)
+
+Frontend: HTML, CSS, JavaScript
+
+Hosting: Render.com
+
+# 🚀 How to Use
+Visit the website: Image Analyzer
+
+Upload an image from your device.
+
+Choose the operation you want to perform:
+
+Rotate, Blur, Contrast, Grayscale, Crop, Add Text.
+
+Apply the changes.
+
+Download the edited image easily.
+
+# 🛠️ Future Enhancements
+Allow multiple operations together (apply blur + rotate etc.)
+
+Add filters like Sepia, Invert Colors
+
+Undo/Redo functionality
+
+Resize images
+
+Drag and drop image upload
